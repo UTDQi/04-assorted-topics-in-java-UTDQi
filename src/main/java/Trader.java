@@ -36,18 +36,18 @@ public class Trader<T> {
     }
 
     public Trader (int money){
-        this.inventory = null;
-        this.wishlist = null;
+        this.inventory = new ArrayList<T>();
+        this.wishlist = new ArrayList<T>();
         this.money = money;
     }
-    
+
 
 
     public void addToWishlist(T object){
         this.wishlist.add(object);
     }
-    
-        
+
+
     public int getSellingPrice(T object){
         if(object.getClass() == Tradable){
             return ((Tradable)object).getPrice();
